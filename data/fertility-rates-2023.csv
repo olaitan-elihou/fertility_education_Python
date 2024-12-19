@@ -1,0 +1,471 @@
+
+                     Geography
+                      ,
+                      Total Fertility Rate                      
+WORLD,2.2
+AFRICA,4.3
+NORTHERN AFRICA,3.0
+Algeria,3.0
+Egypt,2.9
+Libya,2.4
+Morocco,2.1
+Sudan,4.4
+Tunisia,1.8
+Western Sahara,2.3
+WESTERN AFRICA,4.9
+Benin,4.9
+Burkina Faso,4.4
+Cape Verde,1.9
+Cote d'Ivoire,4.3
+Gambia,4.4
+Ghana,3.5
+Guinea,4.3
+GuineaBissau,3.9
+Liberia,4.0
+Mali,5.9
+Mauritania,5.2
+Niger,6.7
+Nigeria,5.1
+Senegal,4.3
+Sierra Leone,4.2
+Togo,4.2
+EASTERN AFRICA,4.2
+Burundi,5.0
+Comoros,3.9
+Djibouti,2.8
+Eritrea,3.8
+Ethiopia,4.1
+Kenya,3.4
+Madagascar,4.3
+Malawi,3.9
+Mauritius,1.3
+Mayotte,4.7
+Mozambique,4.9
+Reunion,2.5
+Rwanda,3.6
+Seychelles,2.0
+Somalia,6.2
+South Sudan,4.3
+Tanzania,4.8
+Uganda,4.5
+Zambia,4.2
+Zimbabwe,3.7
+MIDDLE AFRICA,5.6
+Angola,5.2
+Cameroon,4.5
+Central African Republic,6.4
+Chad,6.2
+Congo,4.1
+Congo DR,6.1
+Equatorial Guinea,4.2
+Gabon,3.9
+Sao Tome and Principe,3.8
+SOUTHERN AFRICA,2.4
+Botswana,2.8
+eSwatini,2.8
+Lesotho,3.0
+Namibia,3.2
+South Africa,2.3
+NORTHERN AMERICA,1.6
+Canada,1.4
+United States,1.7
+LATIN AMERICA AND THE CARIBBEAN,1.9
+CENTRAL AMERICA,1.9
+Belize,1.8
+Costa Rica,1.3
+El Salvador,1.8
+Guatemala,2.4
+Honduras,2.3
+Mexico,1.8
+Nicaragua,2.2
+Panama,2.0
+CARIBBEAN,1.9
+Antigua and Barbuda,1.6
+Bahamas,1.4
+Barbados,1.6
+Cuba,1.5
+Curacao,1.3
+Dominica,1.6
+Dominican Republic,2.2
+Grenada,2.0
+Guadeloupe,2.0
+Haiti,2.5
+Jamaica,1.3
+Martinique,1.9
+Puerto Rico,0.9
+St. Kitts and Nevis,1.6
+St. Lucia,1.4
+St. Vincent and the Grenadines,1.7
+Trinidad and Tobago,1.6
+SOUTH AMERICA,1.8
+Argentina,1.9
+Bolivia,2.5
+Brazil,1.8
+Chile,1.2
+Colombia,1.7
+Ecuador,2.0
+French Guiana,3.5
+Guyana,2.3
+Paraguay,2.4
+Peru,2.2
+Suriname,2.2
+Uruguay,1.5
+Venezuela,2.2
+ASIA,1.9
+WESTERN ASIA,2.5
+Armenia,1.7
+Azerbaijan,1.7
+Bahrain,1.8
+Cyprus,1.3
+Georgia,1.8
+Iraq,3.4
+Israel,2.8
+Jordan,2.8
+Kuwait,2.1
+Lebanon,2.1
+Oman,2.6
+Palestinian Territory,3.8
+Qatar,1.8
+Saudi Arabia,2.4
+Syria,2.7
+Turkey,1.6
+United Arab Emirates,1.4
+Yemen,3.7
+CENTRAL ASIA,3.2
+Kazakhstan,3.0
+Kyrgyzstan,2.8
+Tajikistan,3.6
+Turkmenistan,2.6
+Uzbekistan,3.3
+SOUTH ASIA,2.2
+Afghanistan,5.4
+Bangladesh,2.3
+Bhutan,1.6
+India,2.0
+Iran,1.7
+Maldives,1.7
+Nepal,2.1
+Pakistan,3.4
+Sri Lanka,2.2
+SOUTHEAST ASIA,2.0
+Brunei,1.9
+Cambodia,2.7
+Indonesia,2.2
+Laos,2.5
+Malaysia,2.0
+Myanmar,2.4
+Philippines,1.9
+Singapore,1.0
+Thailand,1.1
+Timor Leste,3.0
+Vietnam,1.9
+EAST ASIA,1.1
+China,1.1
+China Hong Kong SAR,0.7
+China Macao SAR,0.7
+Japan,1.3
+Korea North,1.8
+Korea South,0.8
+Mongolia,2.7
+Taiwan,0.9
+EUROPE,1.4
+NORTHERN EUROPE,1.5
+Denmark,1.6
+Estonia,1.4
+Finland,1.3
+Iceland,1.6
+Ireland,1.7
+Latvia,1.5
+Lithuania,1.3
+Norway,1.4
+Sweden,1.5
+United Kingdom,1.5
+WESTERN EUROPE,1.6
+Austria,1.4
+Belgium,1.5
+France,1.8
+Germany,1.5
+Liechtenstein,1.5
+Luxembourg,1.3
+Monaco,2.1
+Netherlands,1.5
+Switzerland,1.4
+EASTERN EUROPE,1.4
+Belarus,1.4
+Bulgaria,1.8
+Czechia,1.6
+Hungary,1.5
+Moldova,1.7
+Poland,1.2
+Romania,1.6
+Russia,1.4
+Slovakia,1.6
+Ukraine,1.3
+SOUTHERN EUROPE,1.3
+Albania,1.2
+Andorra,0.9
+Bosnia Herzegovina,1.1
+Croatia,1.5
+Greece,1.5
+Italy,1.2
+Kosovo,2.1
+Malta,1.2
+Montenegro,1.8
+North Macedonia,1.6
+Portugal,1.4
+San Marino,1.0
+Serbia,1.6
+Slovenia,1.6
+Spain,1.1
+OCEANIA,2.1
+Australia,1.6
+Federated States of Micronesia,2.7
+Fiji,2.8
+French Polynesia,1.7
+Guam,2.8
+Kiribati,3.3
+Marshall Islands,2.7
+Nauru,3.5
+New Caledonia,2.0
+New Zealand,1.6
+Palau,2.4
+Papua New Guinea,3.2
+Samoa,3.9
+Solomon Islands,3.9
+Tonga,3.2
+Tuvalu,3.1
+Vanuatu,3.7
+GEOGRAPHY,TOTAL FERTILITY RATE
+WORLD,2.2
+AFRICA,4.3
+NORTHERN AFRICA,3.0
+Algeria,3.0
+Egypt,2.9
+Libya,2.4
+Morocco,2.1
+Sudan,4.4
+Tunisia,1.8
+Western Sahara,2.3
+WESTERN AFRICA,4.9
+Benin,4.9
+Burkina Faso,4.4
+Cape Verde,1.9
+Cote d'Ivoire,4.3
+Gambia,4.4
+Ghana,3.5
+Guinea,4.3
+GuineaBissau,3.9
+Liberia,4.0
+Mali,5.9
+Mauritania,5.2
+Niger,6.7
+Nigeria,5.1
+Senegal,4.3
+Sierra Leone,4.2
+Togo,4.2
+EASTERN AFRICA,4.2
+Burundi,5.0
+Comoros,3.9
+Djibouti,2.8
+Eritrea,3.8
+Ethiopia,4.1
+Kenya,3.4
+Madagascar,4.3
+Malawi,3.9
+Mauritius,1.3
+Mayotte,4.7
+Mozambique,4.9
+Reunion,2.5
+Rwanda,3.6
+Seychelles,2.0
+Somalia,6.2
+South Sudan,4.3
+Tanzania,4.8
+Uganda,4.5
+Zambia,4.2
+Zimbabwe,3.7
+MIDDLE AFRICA,5.6
+Angola,5.2
+Cameroon,4.5
+Central African Republic,6.4
+Chad,6.2
+Congo,4.1
+Congo DR,6.1
+Equatorial Guinea,4.2
+Gabon,3.9
+Sao Tome and Principe,3.8
+SOUTHERN AFRICA,2.4
+Botswana,2.8
+eSwatini,2.8
+Lesotho,3.0
+Namibia,3.2
+South Africa,2.3
+NORTHERN AMERICA,1.6
+Canada,1.4
+United States,1.7
+LATIN AMERICA AND THE CARIBBEAN,1.9
+CENTRAL AMERICA,1.9
+Belize,1.8
+Costa Rica,1.3
+El Salvador,1.8
+Guatemala,2.4
+Honduras,2.3
+Mexico,1.8
+Nicaragua,2.2
+Panama,2.0
+CARIBBEAN,1.9
+Antigua and Barbuda,1.6
+Bahamas,1.4
+Barbados,1.6
+Cuba,1.5
+Curacao,1.3
+Dominica,1.6
+Dominican Republic,2.2
+Grenada,2.0
+Guadeloupe,2.0
+Haiti,2.5
+Jamaica,1.3
+Martinique,1.9
+Puerto Rico,0.9
+St. Kitts and Nevis,1.6
+St. Lucia,1.4
+St. Vincent and the Grenadines,1.7
+Trinidad and Tobago,1.6
+SOUTH AMERICA,1.8
+Argentina,1.9
+Bolivia,2.5
+Brazil,1.8
+Chile,1.2
+Colombia,1.7
+Ecuador,2.0
+French Guiana,3.5
+Guyana,2.3
+Paraguay,2.4
+Peru,2.2
+Suriname,2.2
+Uruguay,1.5
+Venezuela,2.2
+ASIA,1.9
+WESTERN ASIA,2.5
+Armenia,1.7
+Azerbaijan,1.7
+Bahrain,1.8
+Cyprus,1.3
+Georgia,1.8
+Iraq,3.4
+Israel,2.8
+Jordan,2.8
+Kuwait,2.1
+Lebanon,2.1
+Oman,2.6
+Palestinian Territory,3.8
+Qatar,1.8
+Saudi Arabia,2.4
+Syria,2.7
+Turkey,1.6
+United Arab Emirates,1.4
+Yemen,3.7
+CENTRAL ASIA,3.2
+Kazakhstan,3.0
+Kyrgyzstan,2.8
+Tajikistan,3.6
+Turkmenistan,2.6
+Uzbekistan,3.3
+SOUTH ASIA,2.2
+Afghanistan,5.4
+Bangladesh,2.3
+Bhutan,1.6
+India,2.0
+Iran,1.7
+Maldives,1.7
+Nepal,2.1
+Pakistan,3.4
+Sri Lanka,2.2
+SOUTHEAST ASIA,2.0
+Brunei,1.9
+Cambodia,2.7
+Indonesia,2.2
+Laos,2.5
+Malaysia,2.0
+Myanmar,2.4
+Philippines,1.9
+Singapore,1.0
+Thailand,1.1
+Timor Leste,3.0
+Vietnam,1.9
+EAST ASIA,1.1
+China,1.1
+China, Hong Kong SAR,0.7
+China, Macao SAR,0.7
+Japan,1.3
+Korea, North,1.8
+Korea, South,0.8
+Mongolia,2.7
+Taiwan,0.9
+EUROPE,1.4
+NORTHERN EUROPE,1.5
+Denmark,1.6
+Estonia,1.4
+Finland,1.3
+Iceland,1.6
+Ireland,1.7
+Latvia,1.5
+Lithuania,1.3
+Norway,1.4
+Sweden,1.5
+United Kingdom,1.5
+WESTERN EUROPE,1.6
+Austria,1.4
+Belgium,1.5
+France,1.8
+Germany,1.5
+Liechtenstein,1.5
+Luxembourg,1.3
+Monaco,2.1
+Netherlands,1.5
+Switzerland,1.4
+EASTERN EUROPE,1.4
+Belarus,1.4
+Bulgaria,1.8
+Czechia,1.6
+Hungary,1.5
+Moldova,1.7
+Poland,1.2
+Romania,1.6
+Russia,1.4
+Slovakia,1.6
+Ukraine,1.3
+SOUTHERN EUROPE,1.3
+Albania,1.2
+Andorra,0.9
+Bosnia Herzegovina,1.1
+Croatia,1.5
+Greece,1.5
+Italy,1.2
+Kosovo,2.1
+Malta,1.2
+Montenegro,1.8
+North Macedonia,1.6
+Portugal,1.4
+San Marino,1.0
+Serbia,1.6
+Slovenia,1.6
+Spain,1.1
+OCEANIA,2.1
+Australia,1.6
+Federated States of Micronesia,2.7
+Fiji,2.8
+French Polynesia,1.7
+Guam,2.8
+Kiribati,3.3
+Marshall Islands,2.7
+Nauru,3.5
+New Caledonia,2.0
+New Zealand,1.6
+Palau,2.4
+Papua New Guinea,3.2
+Samoa,3.9
+Solomon Islands,3.9
+Tonga,3.2
+Tuvalu,3.1
+Vanuatu,3.7

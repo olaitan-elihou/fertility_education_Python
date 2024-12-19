@@ -1,0 +1,471 @@
+
+                     Geography
+                      ,
+                      Population mid-2050 (millions)                      
+WORLD,9783.0
+AFRICA,2487.0
+NORTHERN AFRICA,360.0
+Algeria,61.5
+Egypt,147.1
+Libya,8.5
+Morocco,43.6
+Sudan,84.5
+Tunisia,13.6
+Western Sahara,0.9
+WESTERN AFRICA,778.0
+Benin,25.3
+Burkina Faso,40.1
+Cape Verde,0.7
+Cote d'Ivoire,55.0
+Gambia,4.7
+Ghana,52.2
+Guinea,22.8
+GuineaBissau,3.4
+Liberia,8.9
+Mali,47.4
+Mauritania,9.6
+Niger,67.0
+Nigeria,377.5
+Senegal,33.5
+Sierra Leone,14.4
+Togo,15.5
+EASTERN AFRICA,850.0
+Burundi,24.1
+Comoros,1.2
+Djibouti,1.5
+Eritrea,6.0
+Ethiopia,214.8
+Kenya,85.2
+Madagascar,56.2
+Malawi,33.6
+Mauritius,1.2
+Mayotte,0.7
+Mozambique,63.0
+Reunion,1.1
+Rwanda,23.1
+Seychelles,0.1
+Somalia,36.5
+South Sudan,17.5
+Tanzania,133.8
+Uganda,87.6
+Zambia,36.7
+Zimbabwe,26.4
+MIDDLE AFRICA,407.0
+Angola,72.3
+Cameroon,50.1
+Central African Republic,13.3
+Chad,36.5
+Congo,10.4
+Congo DR,217.5
+Equatorial Guinea,2.8
+Gabon,3.8
+Sao Tome and Principe,0.4
+SOUTHERN AFRICA,92.0
+Botswana,3.7
+eSwatini,1.7
+Lesotho,2.9
+Namibia,3.8
+South Africa,80.3
+NORTHERN AMERICA,435.0
+Canada,50.9
+United States,383.6
+LATIN AMERICA AND THE CARIBBEAN,748.0
+CENTRAL AMERICA,211.0
+Belize,0.6
+Costa Rica,6.1
+El Salvador,6.6
+Guatemala,24.6
+Honduras,14.3
+Mexico,143.8
+Nicaragua,8.8
+Panama,5.9
+CARIBBEAN,47.0
+Antigua and Barbuda,0.1
+Bahamas,0.5
+Barbados,0.3
+Cuba,9.9
+Curacao,0.2
+Dominica,0.1
+Dominican Republic,13.2
+Grenada,0.1
+Guadeloupe,0.4
+Haiti,14.9
+Jamaica,2.5
+Martinique,0.3
+Puerto Rico,2.5
+St. Kitts and Nevis,0.1
+St. Lucia,0.2
+St. Vincent and the Grenadines,0.1
+Trinidad and Tobago,1.3
+SOUTH AMERICA,490.0
+Argentina,52.2
+Bolivia,16.0
+Brazil,230.8
+Chile,21.6
+Colombia,57.7
+Ecuador,21.0
+French Guiana,0.5
+Guyana,0.9
+Paraguay,7.7
+Peru,41.3
+Suriname,0.7
+Uruguay,3.5
+Venezuela,35.9
+ASIA,5325.0
+WESTERN ASIA,411.0
+Armenia,2.5
+Azerbaijan,10.7
+Bahrain,1.9
+Cyprus,1.4
+Georgia,3.1
+Iraq,74.5
+Israel,15.7
+Jordan,14.1
+Kuwait,5.2
+Lebanon,4.9
+Oman,6.8
+Palestinian Territory,9.8
+Qatar,3.4
+Saudi Arabia,48.4
+Syria,38.3
+Turkey,103.2
+United Arab Emirates,11.4
+Yemen,55.3
+CENTRAL ASIA,111.0
+Kazakhstan,26.0
+Kyrgyzstan,9.5
+Tajikistan,16.0
+Turkmenistan,8.3
+Uzbekistan,51.2
+SOUTH ASIA,2503.0
+Afghanistan,80.4
+Bangladesh,223.5
+Bhutan,0.9
+India,1670.5
+Iran,99.0
+Maldives,0.9
+Nepal,37.4
+Pakistan,367.8
+Sri Lanka,22.8
+SOUTHEAST ASIA,786.0
+Brunei,0.5
+Cambodia,22.2
+Indonesia,328.9
+Laos,10.6
+Malaysia,40.1
+Myanmar,66.2
+Philippines,144.4
+Singapore,6.2
+Thailand,57.9
+Timor Leste,1.8
+Vietnam,107.0
+EAST ASIA,1514.0
+China,1303.5
+China Hong Kong SAR,7.6
+China Macao SAR,0.8
+Japan,101.8
+Korea North,25.8
+Korea South,47.2
+Mongolia,5.1
+Taiwan,21.9
+EUROPE,725.0
+NORTHERN EUROPE,113.0
+Denmark,6.3
+Estonia,1.3
+Finland,5.5
+Iceland,0.5
+Ireland,5.9
+Latvia,1.5
+Lithuania,2.3
+Norway,6.1
+Sweden,11.8
+United Kingdom,71.7
+WESTERN EUROPE,209.0
+Austria,9.9
+Belgium,12.6
+France,66.4
+Germany,89.2
+Liechtenstein,0.0
+Luxembourg,0.8
+Monaco,0.0
+Netherlands,19.5
+Switzerland,10.4
+EASTERN EUROPE,256.0
+Belarus,8.1
+Bulgaria,5.3
+Czechia,10.9
+Hungary,8.3
+Moldova,3.0
+Poland,33.2
+Romania,16.7
+Russia,133.1
+Slovakia,4.9
+Ukraine,32.9
+SOUTHERN EUROPE,147.0
+Albania,2.2
+Andorra,0.1
+Bosnia Herzegovina,2.9
+Croatia,3.4
+Greece,9.5
+Italy,54.1
+Kosovo,1.6
+Malta,0.5
+Montenegro,0.7
+North Macedonia,1.7
+Portugal,9.4
+San Marino,0.0
+Serbia,5.3
+Slovenia,2.1
+Spain,53.4
+OCEANIA,63.0
+Australia,37.6
+Federated States of Micronesia,0.1
+Fiji,0.9
+French Polynesia,0.3
+Guam,0.2
+Kiribati,0.2
+Marshall Islands,0.1
+Nauru,0.0
+New Caledonia,0.3
+New Zealand,6.2
+Palau,0.0
+Papua New Guinea,15.1
+Samoa,0.2
+Solomon Islands,1.3
+Tonga,0.1
+Tuvalu,0.0
+Vanuatu,0.5
+GEOGRAPHY,POPULATION MID-2050 (MILLIONS)
+WORLD,9783.0
+AFRICA,2487.0
+NORTHERN AFRICA,360.0
+Algeria,61.5
+Egypt,147.1
+Libya,8.5
+Morocco,43.6
+Sudan,84.5
+Tunisia,13.6
+Western Sahara,0.9
+WESTERN AFRICA,778.0
+Benin,25.3
+Burkina Faso,40.1
+Cape Verde,0.7
+Cote d'Ivoire,55.0
+Gambia,4.7
+Ghana,52.2
+Guinea,22.8
+GuineaBissau,3.4
+Liberia,8.9
+Mali,47.4
+Mauritania,9.6
+Niger,67.0
+Nigeria,377.5
+Senegal,33.5
+Sierra Leone,14.4
+Togo,15.5
+EASTERN AFRICA,850.0
+Burundi,24.1
+Comoros,1.2
+Djibouti,1.5
+Eritrea,6.0
+Ethiopia,214.8
+Kenya,85.2
+Madagascar,56.2
+Malawi,33.6
+Mauritius,1.2
+Mayotte,0.7
+Mozambique,63.0
+Reunion,1.1
+Rwanda,23.1
+Seychelles,0.1
+Somalia,36.5
+South Sudan,17.5
+Tanzania,133.8
+Uganda,87.6
+Zambia,36.7
+Zimbabwe,26.4
+MIDDLE AFRICA,407.0
+Angola,72.3
+Cameroon,50.1
+Central African Republic,13.3
+Chad,36.5
+Congo,10.4
+Congo DR,217.5
+Equatorial Guinea,2.8
+Gabon,3.8
+Sao Tome and Principe,0.4
+SOUTHERN AFRICA,92.0
+Botswana,3.7
+eSwatini,1.7
+Lesotho,2.9
+Namibia,3.8
+South Africa,80.3
+NORTHERN AMERICA,435.0
+Canada,50.9
+United States,383.6
+LATIN AMERICA AND THE CARIBBEAN,748.0
+CENTRAL AMERICA,211.0
+Belize,0.6
+Costa Rica,6.1
+El Salvador,6.6
+Guatemala,24.6
+Honduras,14.3
+Mexico,143.8
+Nicaragua,8.8
+Panama,5.9
+CARIBBEAN,47.0
+Antigua and Barbuda,0.1
+Bahamas,0.5
+Barbados,0.3
+Cuba,9.9
+Curacao,0.2
+Dominica,0.1
+Dominican Republic,13.2
+Grenada,0.1
+Guadeloupe,0.4
+Haiti,14.9
+Jamaica,2.5
+Martinique,0.3
+Puerto Rico,2.5
+St. Kitts and Nevis,0.1
+St. Lucia,0.2
+St. Vincent and the Grenadines,0.1
+Trinidad and Tobago,1.3
+SOUTH AMERICA,490.0
+Argentina,52.2
+Bolivia,16.0
+Brazil,230.8
+Chile,21.6
+Colombia,57.7
+Ecuador,21.0
+French Guiana,0.5
+Guyana,0.9
+Paraguay,7.7
+Peru,41.3
+Suriname,0.7
+Uruguay,3.5
+Venezuela,35.9
+ASIA,5325.0
+WESTERN ASIA,411.0
+Armenia,2.5
+Azerbaijan,10.7
+Bahrain,1.9
+Cyprus,1.4
+Georgia,3.1
+Iraq,74.5
+Israel,15.7
+Jordan,14.1
+Kuwait,5.2
+Lebanon,4.9
+Oman,6.8
+Palestinian Territory,9.8
+Qatar,3.4
+Saudi Arabia,48.4
+Syria,38.3
+Turkey,103.2
+United Arab Emirates,11.4
+Yemen,55.3
+CENTRAL ASIA,111.0
+Kazakhstan,26.0
+Kyrgyzstan,9.5
+Tajikistan,16.0
+Turkmenistan,8.3
+Uzbekistan,51.2
+SOUTH ASIA,2503.0
+Afghanistan,80.4
+Bangladesh,223.5
+Bhutan,0.9
+India,1670.5
+Iran,99.0
+Maldives,0.9
+Nepal,37.4
+Pakistan,367.8
+Sri Lanka,22.8
+SOUTHEAST ASIA,786.0
+Brunei,0.5
+Cambodia,22.2
+Indonesia,328.9
+Laos,10.6
+Malaysia,40.1
+Myanmar,66.2
+Philippines,144.4
+Singapore,6.2
+Thailand,57.9
+Timor Leste,1.8
+Vietnam,107.0
+EAST ASIA,1514.0
+China,1303.5
+China, Hong Kong SAR,7.6
+China, Macao SAR,0.8
+Japan,101.8
+Korea, North,25.8
+Korea, South,47.2
+Mongolia,5.1
+Taiwan,21.9
+EUROPE,725.0
+NORTHERN EUROPE,113.0
+Denmark,6.3
+Estonia,1.3
+Finland,5.5
+Iceland,0.5
+Ireland,5.9
+Latvia,1.5
+Lithuania,2.3
+Norway,6.1
+Sweden,11.8
+United Kingdom,71.7
+WESTERN EUROPE,209.0
+Austria,9.9
+Belgium,12.6
+France,66.4
+Germany,89.2
+Liechtenstein,0.0
+Luxembourg,0.8
+Monaco,0.0
+Netherlands,19.5
+Switzerland,10.4
+EASTERN EUROPE,256.0
+Belarus,8.1
+Bulgaria,5.3
+Czechia,10.9
+Hungary,8.3
+Moldova,3.0
+Poland,33.2
+Romania,16.7
+Russia,133.1
+Slovakia,4.9
+Ukraine,32.9
+SOUTHERN EUROPE,147.0
+Albania,2.2
+Andorra,0.1
+Bosnia Herzegovina,2.9
+Croatia,3.4
+Greece,9.5
+Italy,54.1
+Kosovo,1.6
+Malta,0.5
+Montenegro,0.7
+North Macedonia,1.7
+Portugal,9.4
+San Marino,0.0
+Serbia,5.3
+Slovenia,2.1
+Spain,53.4
+OCEANIA,63.0
+Australia,37.6
+Federated States of Micronesia,0.1
+Fiji,0.9
+French Polynesia,0.3
+Guam,0.2
+Kiribati,0.2
+Marshall Islands,0.1
+Nauru,0.0
+New Caledonia,0.3
+New Zealand,6.2
+Palau,0.0
+Papua New Guinea,15.1
+Samoa,0.2
+Solomon Islands,1.3
+Tonga,0.1
+Tuvalu,0.0
+Vanuatu,0.5

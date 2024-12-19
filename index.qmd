@@ -1,0 +1,786 @@
+---
+title: "Fertility Rate & Women's Education: A Decades-long Analysis"
+author: "Elihou O. ADJE"
+format: dashboard
+theme: lumen
+---
+
+```{python}
+# | include: false
+
+# Packages
+import pandas as pd
+import numpy as np
+import itables
+from itables import show
+import plotly.express as px
+import plotly.graph_objects as go
+import country_converter as coco
+from IPython.display import Markdown
+from openai import OpenAI
+from local_settings import OPENAI_KEY
+
+# Initialize the OpenAI client
+client = OpenAI(api_key=OPENAI_KEY)
+
+pd.options.mode.copy_on_write = True
+```
+
+```{python}
+# Function to clean column names
+def clean_column_names(df):
+    df.columns = (
+        df.columns.str.lower()  # Convert to lowercase
+        .str.strip()  # Remove leading/trailing whitespace
+        .str.replace(" ", "_", regex=True)  # Replace spaces with underscores
+        .str.replace(r"\W", "", regex=True)  # Remove special characters
+    )
+    return df
+```
+
+# Fertility Rate
+
+```{python}
+# | include: false
+
+# Import world population data (in millions)
+world_pop2023_data = pd.read_csv(
+    "data/population-data-2023.csv",
+    skiprows=4,
+    header=None,
+    names=["Geography", "Population"],
+    nrows=233,
+)
+
+world_pop2023_data
+
+# Key Metric calculation
+world_pop_2023 = (
+    world_pop2023_data.query("Geography == 'WORLD'").drop(columns="Geography").squeeze()
+)
+
+world_pop_2023
+```
+
+```{python}
+# | include: false
+
+# Import world population data
+world_bth2023_data = pd.read_csv(
+    "data/world-births-data-2023.csv",
+    skiprows=4,
+    header=None,
+    names=["Geography", "Births"],
+    nrows=233,
+)
+
+world_bth2023_data
+
+world_births_2023 = (
+    world_bth2023_data.query("Geography == 'WORLD'").drop(columns="Geography").squeeze()
+)
+
+world_births_2023
+```
+
+```{python}
+# | include: false
+
+# Import Total Fertility Rate data in 2023
+world_tfr2023_data = pd.read_csv(
+    "data/fertility-rates-2023.csv", skiprows=4, names=["Geography", "TFR"], nrows=233
+)
+
+world_tfr_2023 = (
+    world_tfr2023_data.query("Geography == 'WORLD'").drop(columns="Geography").squeeze()
+)
+
+world_tfr_2023
+```
+
+```{python}
+# | include: false
+
+# Import world population data 2050 (in millions)
+world_pop2050_data = pd.read_csv(
+    "data/population-data-2050.csv",
+    skiprows=4,
+    header=None,
+    names=["Geography", "Population"],
+    nrows=233,
+)
+
+world_pop2050_data
+
+world_pop_2050 = (
+    world_pop2050_data.query("Geography == 'WORLD'").drop(columns="Geography").squeeze()
+)
+
+world_pop_2050
+```
+
+```{python}
+# | include: false
+
+# Import GAPMINDER Fertility Rates Data
+fert_rates_rawdata = pd.read_csv("data/children_per_woman_total_fertility.csv")
+
+fert_rates_rawdata
+```
+
+## Row 1 {height=25%}
+
+::: {.valuebox title="World Population (2023)" icon="person" color="#bdd7e7"}
+`{python} str(round(world_pop_2023/1000,2)) + "B"`
+:::
+
+::: {.valuebox title="Total births (2023)" icon="emoji-smile" color="#6baed6"}
+`{python} str(round(world_births_2023,2)) + "M"`
+:::
+
+::: {.valuebox title="Total Fertility Rate (2023)" icon="person-standing-dress" color="#3182bd"}
+`{python} str(round(world_tfr_2023,2)) + "bths"`
+:::
+
+::: {.valuebox title="Projected Population (2050)" icon="person-plus" color="#08519c"}
+`{python} str(round(world_pop_2050/1000,2)) + "B"`
+:::
+
+## Row 2
+
+### Col 2.1 {width=50%}
+
+```{python}
+# | include: false
+
+fert_rates_data = fert_rates_rawdata.copy()
+
+# Add  ISO Code to countries
+fert_rates_data["country_code"] = coco.convert(fert_rates_data["country"], to="ISO3")
+# Not found: Netherlands Antilles, UAE (i.e., United Arab Emirates), Channel Islands
+
+# Replace missing country codes based on the ISO Online Browsing Information site [https://www.iso.org/obp/ui/#home]
+fert_rates_data["country_code"] = fert_rates_data["country_code"].mask(
+    fert_rates_data["country"] == "Netherlands Antilles", "ANT"
+)  # Netherlands Antilles
+fert_rates_data["country_code"] = fert_rates_data["country_code"].mask(
+    fert_rates_data["country"] == "Channel Islands", "CHI"
+)  # Channel Islands
+fert_rates_data["country_code"] = fert_rates_data["country_code"].mask(
+    fert_rates_data["country"] == "UAE", "ARE"
+)  # UAE (i.e., United Arab Emirates)
+
+# Add Continent to the database
+fert_rates_data["continent"] = coco.convert(
+    fert_rates_data["country_code"], to="continent"
+)
+# ANT not found in ISO3
+# CHI not found in ISO3
+
+# Replace missing continent values
+fert_rates_data["continent"] = fert_rates_data["continent"].mask(
+    fert_rates_data["country"] == "Netherlands Antilles", "America"
+)  # Netherlands Antilles
+
+fert_rates_data["continent"] = fert_rates_data["continent"].mask(
+    fert_rates_data["country"] == "Channel Islands", "Europe"
+)  # Channel Islands
+
+# Pivot longer fert_rates_2023 data
+fert_rates_long = fert_rates_data.melt(
+    id_vars=["country", "country_code", "continent"],
+    var_name="year",
+    value_name="fert_rates",
+)
+
+fert_rates_long["year"] = fert_rates_long["year"].astype(int)
+
+fert_rates_2023_long = fert_rates_long.query("year == 2023")
+
+fert_rates_2023_long
+
+# Top 10 countries in the world
+top10_fert_2023_world = (
+    fert_rates_2023_long.query("continent.notna()")
+    .sort_values("fert_rates", ascending=False)
+    .head(10)
+)
+
+top10_fert_2023_world["continent"] = "World"
+
+top10_fert_2023_world
+
+# Top 10 countries in the world and per continent
+top10_fert_2023 = (
+    pd.concat([top10_fert_2023_world, fert_rates_2023_long], ignore_index=True)
+    .sort_values("fert_rates", ascending=False)
+    .groupby("continent")
+    .head(10)
+)
+
+top10_fert_2023
+
+# Create a figure and add a trace for each continent
+fig_top10_fert = go.Figure()
+
+# Add bars for each continent
+for continent in top10_fert_2023["continent"].unique():
+    fig_top10_fert.add_trace(
+        go.Bar(
+            x=top10_fert_2023[top10_fert_2023["continent"] == continent]["country"],
+            y=top10_fert_2023[top10_fert_2023["continent"] == continent]["fert_rates"],
+            name=continent,
+            visible=False,  # Initially hide all but the first continent
+            marker_color="#158CBA",  # Set bar color to green
+        )
+    )
+
+# Make the world top 10 countries visible
+fig_top10_fert.data[0].visible = True
+
+# Set up dropdown buttons to select continents
+dropdown_buttons = []
+for i, continent in enumerate(top10_fert_2023["continent"].unique()):
+    button = dict(
+        label=continent,
+        method="update",
+        args=[
+            {"visible": [j == i for j in range(len(fig_top10_fert.data))]},
+            {"title": f"Top 10 Countries by Fertility Rate (2023) in {continent}"},
+        ],
+    )
+    dropdown_buttons.append(button)
+
+# Update layout with dropdown
+fig_top10_fert.update_layout(
+    title="Top 10 Countries by Fertility Rate (2023)",
+    xaxis_title="Countries",
+    yaxis_title="Fertility Rate",
+    yaxis=dict(range=[0, 7]),  # Set a fixed y-axis range for fertility rates
+    updatemenus=[
+        {
+            "buttons": dropdown_buttons,
+            "direction": "down",
+            "showactive": True,
+            "x": 0.5,
+            "xanchor": "left",
+            "y": 1,
+            "yanchor": "top",
+        }
+    ],
+    barmode="group",  # Ensure bars are grouped
+)
+
+```
+
+```{python}
+
+# Show the plot
+fig_top10_fert.show()
+
+```
+
+### Col 2.2
+
+```{python}
+
+map_fert_rates = px.choropleth(
+    fert_rates_long.query("year>=1800 and year<=2023"),
+    locations="country_code",
+    color="fert_rates",
+    hover_name="country",
+    animation_frame="year",
+    color_continuous_scale=px.colors.sequential.YlGnBu,
+    range_color=[0, 10],
+    title="Map of countries by fertility rates over years, 1800-2023",
+    labels={"fert_rates": "Fertility <br> Rates"},  # Label for the legend
+)
+
+map_fert_rates.show()
+
+```
+
+# Women's Education
+
+```{python}
+# | include: false
+
+# Import world population data (in millions)
+world_educ2023_data = pd.read_csv("data/SDG_Feb2024_WORLD_EDUC.csv")
+
+world_educ2023_data = clean_column_names(world_educ2023_data)
+
+world_educ2023_data
+
+# Key metric calculation: Adult literacy rate, population 15+ years, female (%)
+world_lit_2022 = world_educ2023_data.query("target_and_indicators == 'Adult literacy rate, population 15+ years, female (%)'")["2022"].squeeze()
+
+world_lit_2022
+
+# Key metric calculation: Completion rate, primary education, female (%)
+world_prim_2023 = world_educ2023_data.query("target_and_indicators == 'Completion rate, primary education, female (%)'")["2023"].squeeze()
+
+world_prim_2023
+
+# Key metric calculation: Completion rate, lower secondary education, female (%)
+world_lwsec_2023 = world_educ2023_data.query("target_and_indicators == 'Completion rate, lower secondary education, female (%)'")["2023"].squeeze()
+
+world_lwsec_2023
+
+# Key metric calculation: Completion rate, upper secondary education, female (%)
+world_upsec_2023 = world_educ2023_data.query("target_and_indicators == 'Completion rate, upper secondary education, female (%)'")["2023"].squeeze()
+
+world_upsec_2023
+
+```
+
+```{python}
+# | include: false
+
+# Import GAPMINDER Fertility Rates Data
+mean_schyrs_rawdata = pd.read_csv("data/mean_years_in_school_women_15_to_24_years.csv")
+
+mean_schyrs_rawdata
+```
+
+## Row 1 {height=25%}
+
+::: {.valuebox title="Completion, primary education, female (2023)" icon="backpack2" color="#bae4b3"}
+`{python} str(round(world_lit_2022,1)) + "%"`
+:::
+
+::: {.valuebox title="Completion, lower secondary, female (2023)" icon="backpack4" color="#74c476"}
+`{python} str(round(world_prim_2023,1)) + "%"`
+:::
+
+::: {.valuebox title="Completion, upper secondary, female (2023)" icon="award" color="#31a354"}
+`{python} str(round(world_lwsec_2023,1)) + "%"`
+:::
+
+::: {.valuebox title="Adult literacy, 15+ years, female (2022)" icon="easel" color="#006d2c"}
+`{python} str(round(world_upsec_2023,1)) + "%"`
+:::
+
+## Row 2
+
+### Col 2.1 {width=50%}
+
+```{python}
+# | include: false
+
+mean_schyrs_data = mean_schyrs_rawdata.copy()
+
+# Add  ISO Code to countries
+mean_schyrs_data["country_code"] = coco.convert(mean_schyrs_data["country"], to="ISO3")
+# Not found: UAE
+
+# Replace missing country code based on the ISO Online Browsing Information site [https://www.iso.org/obp/ui/#home]
+mean_schyrs_data["country_code"] = mean_schyrs_data["country_code"].mask(
+    mean_schyrs_data["country"] == "UAE", "ARE"
+)  # UAE (i.e., United Arab Emirates)
+
+# Add Continent to the database
+mean_schyrs_data["continent"] = coco.convert(
+    mean_schyrs_data["country_code"], to="continent"
+)
+
+# Pivot longer mean_schyrs_data
+mean_schyrs_long = mean_schyrs_data.melt(
+    id_vars=["country", "country_code", "continent"],
+    var_name="year",
+    value_name="mean_schyrs",
+)
+
+mean_schyrs_long["year"] = mean_schyrs_long["year"].astype(int)
+
+mean_schyrs_2015_long = mean_schyrs_long.query("year == 2015")
+
+mean_schyrs_2015_long
+
+# Top 10 countries in the world
+top10_schyrs_2015_world = (
+    mean_schyrs_2015_long.query("continent.notna()")
+    .sort_values("mean_schyrs", ascending=False)
+    .head(10)
+)
+
+top10_schyrs_2015_world["continent"] = "World"
+
+top10_schyrs_2015_world
+
+# Top 10 countries in the world and per continent
+top10_schyrs_2015 = (
+    pd.concat([top10_schyrs_2015_world, mean_schyrs_2015_long], ignore_index=True)
+    .sort_values("mean_schyrs", ascending=False)
+    .groupby("continent")
+    .head(10)
+)
+
+top10_schyrs_2015
+
+# Create a figure and add a trace for each continent
+fig_top10_schyrs = go.Figure()
+
+# Add bars for each continent
+for continent in top10_schyrs_2015["continent"].unique():
+    fig_top10_schyrs.add_trace(
+        go.Bar(
+            x=top10_schyrs_2015[top10_schyrs_2015["continent"] == continent]["country"],
+            y=top10_schyrs_2015[top10_schyrs_2015["continent"] == continent][
+                "mean_schyrs"
+            ],
+            name=continent,
+            visible=False,  # Initially hide all but the first continent
+            marker_color="green",  # Set bar color to green
+        )
+    )
+
+# Make the world top 10 countries visible
+fig_top10_schyrs.data[0].visible = True
+
+# Set up dropdown buttons to select continents
+dropdown_buttons = []
+for i, continent in enumerate(top10_schyrs_2015["continent"].unique()):
+    button = dict(
+        label=continent,
+        method="update",
+        args=[
+            {"visible": [j == i for j in range(len(fig_top10_schyrs.data))]},
+            {
+                "title": f"Top 10 Countries by Women Mean Years in school (2015) in {continent}"
+            },
+        ],
+    )
+    dropdown_buttons.append(button)
+
+# Update layout with dropdown
+fig_top10_schyrs.update_layout(
+    title="Top 10 Countries by Women Mean Years in school (2015)",
+    xaxis_title="Countries",
+    yaxis_title="Mean Years in School",
+    yaxis=dict(range=[0, 17]),  # Set a fixed y-axis range
+    updatemenus=[
+        {
+            "buttons": dropdown_buttons,
+            "direction": "down",
+            "showactive": True,
+            "x": 0.5,
+            "xanchor": "left",
+            "y": 1,
+            "yanchor": "top",
+        }
+    ],
+    barmode="group",  # Ensure bars are grouped
+)
+
+```
+
+```{python}
+
+# Show the plot
+fig_top10_schyrs.show()
+
+```
+
+### Col 2.2
+
+```{python}
+
+map_mean_schyrs = px.choropleth(
+    mean_schyrs_long.query("year>=1970 and year<=2015"),
+    locations="country_code",
+    color="mean_schyrs",
+    hover_name="country",
+    animation_frame="year",
+    color_continuous_scale=px.colors.sequential.YlGn,
+    range_color=[0, 17],
+    title="Map of countries by women mean years in school over time, 1970-2015",
+    labels={"mean_schyrs": "Mean <br> Years"},  # Label for the legend
+)
+
+map_mean_schyrs.show()
+
+```
+
+# Fertility vs Education
+
+```{python}
+# | include: false
+
+world_pop_rawdata = pd.read_csv("data/pop-data-1800-2100.csv")
+
+world_pop_rawdata  # Population data is a mixture of str(eg. 3.28M, 40.2k) and float
+```
+
+```{python}
+# | include: false
+
+
+# Create a function to convert population sizes into appropriate numbers
+def convert_to_number(value):
+    # Check if the value is None
+    if value is None:
+        return None
+
+    # Check if the value is a string
+    if isinstance(value, str):
+        # Handle "k", "m" and "B" cases
+        if "k" in value.lower():
+            corrected_value = value.strip().replace("k", "").replace("K", "")
+            converted_value = float(corrected_value) * 1000
+            return converted_value
+        elif "m" in value.lower():
+            corrected_value = value.strip().replace("m", "").replace("M", "")
+            converted_value = float(corrected_value) * 1000000
+            return converted_value
+        elif "b" in value.lower():
+            corrected_value = value.strip().replace("b", "").replace("B", "")
+            converted_value = float(corrected_value) * 1000000000
+            return converted_value
+
+    # Convert directly to float for values without prefixes or already as float
+    return float(value)
+
+
+convert_to_number = np.vectorize(convert_to_number)
+```
+
+```{python}
+# | include: false
+
+world_pop_data = world_pop_rawdata.copy()
+
+# Add  ISO Code to countries
+world_pop_data["country_code"] = coco.convert(
+    world_pop_data["country"], to="ISO3"
+)  # Not found: UAE
+
+# Replace missing country code
+world_pop_data["country_code"] = world_pop_data["country_code"].mask(
+    world_pop_data["country"] == "UAE", "ARE"
+)  # UAE (i.e., United Arab Emirates)
+
+# Pivot longer world_pop_data data
+world_pop_long = world_pop_data.melt(
+    id_vars=["country", "country_code"],
+    var_name="year",
+    value_name="population",
+)
+
+world_pop_long["population"] = convert_to_number(world_pop_long["population"]).astype(
+    int
+)
+
+world_pop_long["year"] = world_pop_long["year"].astype(int)
+
+# Keep only 2023 or earlier data
+world_pop_long = world_pop_long.query("year <= 2023")
+
+world_pop_long
+```
+
+```{python}
+# | include: false
+
+# Join (inner) fertility and educ long databases
+fert_educ_long = pd.merge(
+    fert_rates_long,
+    mean_schyrs_long.drop(columns=["country", "continent"]),
+    on=["country_code", "year"],
+)
+
+fert_educ_long
+
+# Join (inner) fert_educ_long with worl population data
+fert_educ_pop_long = pd.merge(
+    fert_educ_long,
+    world_pop_long.drop(columns=["country"]),
+    on=["country_code", "year"],
+)
+
+fert_educ_pop_long
+```
+
+## Row
+
+### Col 1 
+
+```{python}
+# | title: "Trends in fertility rates and female education in the world by population size, 1970-2015"
+
+scatter_fert_educ = px.scatter(
+    fert_educ_pop_long,
+    x="fert_rates",
+    y="mean_schyrs",
+    size="population",
+    color="continent",
+    hover_name="country",
+    animation_frame="year",
+    labels={
+        "fert_rates": "Fertility Rate",
+        "mean_schyrs": "Women Mean Years in school",
+        "continent": "Continent",
+    },
+    size_max=60,  # Maximum size of the points
+)
+
+# Set fixed axis ranges
+scatter_fert_educ.update_layout(
+    xaxis=dict(range=[0, 9]),  # Fixed range for Fertility Rate
+    yaxis=dict(range=[0, 17]),  # Fixed range for Education
+)
+```
+
+::: {style="height: 100%;"}
+
+### Col 2 {"height=100%"}
+
+```{python}
+# | include: false
+
+
+# Function to describe the plot
+def describe_plot(dataframe):
+    # Minimum and Maximun Years
+    min_year = dataframe["year"].min()
+    max_year = dataframe["year"].max()
+
+    min_max_yrs = [min_year, max_year]
+
+    # Initialize the dictionary
+    reg_sum_ = {}
+
+    # Loop to compute the statistics for each year
+    for year in min_max_yrs:
+        reg_sum_[year] = (
+            dataframe.query("year == @year")
+            .groupby("continent")
+            .apply(
+                lambda g: pd.Series(
+                    {
+                        "Average Fertility Rate": g["fert_rates"].mean(),
+                        "Lowest Fertility Rate": g["fert_rates"].min(),
+                        "Country with Lowest Fertility Rate": g.loc[
+                            g["fert_rates"].idxmin(), "country"
+                        ],
+                        "Average Female Years in School of Country with Lowest Fertility Rate": g.loc[
+                            g["fert_rates"].idxmin(), "mean_schyrs"
+                        ],
+                        "Highest Fertility Rate": g["fert_rates"].max(),
+                        "Country with Highest Fertility Rate": g.loc[
+                            g["fert_rates"].idxmax(), "country"
+                        ],
+                        "Average Female Years in School of Country with Highest Fertility Rate": g.loc[
+                            g["fert_rates"].idxmax(), "mean_schyrs"
+                        ],
+                        "Overall Average Female Years in School": g[
+                            "mean_schyrs"
+                        ].mean(),
+                        "Lowest Average Female Years in School": g["mean_schyrs"].min(),
+                        "Country with Lowest Average Female Years in School": g.loc[
+                            g["mean_schyrs"].idxmin(), "country"
+                        ],
+                        "Fertility Rate of Country with Lowest Average Female Years in School": g.loc[
+                            g["mean_schyrs"].idxmin(), "fert_rates"
+                        ],
+                        "Highest Average Female Years in School": g[
+                            "mean_schyrs"
+                        ].max(),
+                        "Country with Highest Average Female Years in School": g.loc[
+                            g["mean_schyrs"].idxmax(), "country"
+                        ],
+                        "Fertility Rate of Country with Highest Average Female Years in School": g.loc[
+                            g["mean_schyrs"].idxmax(), "fert_rates"
+                        ],
+                    }
+                )
+            )
+            .round(2)
+        )
+
+    # Convert the reg_sum_ dictionary into a list of formatted strings
+    results_list = []
+
+    for year, stats in reg_sum_.items():
+        for continent, values in stats.iterrows():
+            result_string = (
+                f"In {year}, for {continent}:\n"
+                f"- Average Fertility Rate: {values['Average Fertility Rate']}\n"
+                f"- Lowest Fertility Rate: {values['Lowest Fertility Rate']}\n"
+                f"- Country with Lowest Fertility Rate: {values['Country with Lowest Fertility Rate']}\n"
+                f"- Average Female Years in School of Country with Lowest Fertility Rate: {values['Average Female Years in School of Country with Lowest Fertility Rate']}\n"
+                f"- Highest Fertility Rate: {values['Highest Fertility Rate']}\n"
+                f"- Country with Highest Fertility Rate: {values['Country with Highest Fertility Rate']}\n"
+                f"- Average Female Years in School of Country with Highest Fertility Rate: {values['Average Female Years in School of Country with Highest Fertility Rate']}\n"
+                f"- Overall Average Female Years in School: {values['Overall Average Female Years in School']}\n"
+                f"- Lowest Average Female Years in School: {values['Lowest Average Female Years in School']}\n"
+                f"- Country with Lowest Average Female Years in School: {values['Country with Lowest Average Female Years in School']}\n"
+                f"- Fertility Rate of Country with Lowest Average Female Years in School: {values['Fertility Rate of Country with Lowest Average Female Years in School']}\n"
+                f"- Highest Average Female Years in School: {values['Highest Average Female Years in School']}\n"
+                f"- Country with Highest Average Female Years in School: {values['Country with Highest Average Female Years in School']}\n"
+                f"- Fertility Rate of Country with Highest Average Female Years in School: {values['Fertility Rate of Country with Highest Average Female Years in School']}\n"
+            )
+            results_list.append(result_string)
+
+    # Join all results into a single text block
+    results_text = "\n".join(results_list)
+
+    description = f"""
+    The graph shows the evolution between {min_year} and {max_year} of the scatterplot between the fertility rate of the world's countries and the average number of years of female education. Since {min_year}, we can see that the two variables are negatively correlated, with an increasingly steep slope over the years.
+    The data below describe some statistics for {min_year} and {max_year} to give a better idea of the changing dynamics on the different continents over the period.
+    {results_text}
+    """
+    return description.strip()
+```
+
+```{python}
+# | include: false
+
+
+# AI Generated interpretation
+def generate_interpretation(plot_description):
+    prompt = f""""
+    Interpret this plot data with no more than 300 words: {plot_description}."
+
+    """
+    response = client.chat.completions.create(
+        model="gpt-4o-mini", messages=[{"role": "user", "content": prompt}]
+    )
+    return response.choices[0].message.content
+```
+
+```{python}
+# | include: false
+
+plot_description = describe_plot(fert_educ_pop_long)
+interpretation = generate_interpretation(plot_description)
+```
+
+```{python}
+# | title: "Interpretation of Fertility Rate and Female Education from 1970 to 2015 (generated by gpt-4o-mini)"
+
+Markdown(interpretation)
+
+```
+
+:::
+
+# Data
+The 2015 GAPMINDER data used in this dashboard are shown below and can be downloaded as a CSV file. For the full datasets and other data sources, please refer to the ABOUT page and the README file
+
+```{python}
+# Display full joined dataset with itables for 2015
+itables.show(fert_educ_pop_long.query("year == 2015"), caption="Gapminder 2015 Dataset", buttons=["csvHtml5"])
+
+```
+
+# About
+
+This data comes from the [Gapminder’s data repository](https://gapminder.org/data), which is sourced from the Gapminder Foundation.
+
+The Gapminder Foundation is a non-profit venture that promotes sustainable global development and achievement of the United Nations Millennium Development Goals by increasing use and understanding of statistics and other information about social, economic, and environmental development.
+
+
+**Understanding "Fertility Rate": A Key Demographic Term**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gc1gtT3VyBA?si=wcMMlKkkDaPhpqEY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

@@ -1,0 +1,471 @@
+
+                     Geography
+                      ,
+                      Births per 1,000 Population                      
+WORLD,17
+AFRICA,32
+NORTHERN AFRICA,23
+Algeria,24
+Egypt,21
+Libya,17
+Morocco,16
+Sudan,33
+Tunisia,14
+Western Sahara,16
+WESTERN AFRICA,36
+Benin,36
+Burkina Faso,31
+Cape Verde,14
+Cote d'Ivoire,33
+Gambia,34
+Ghana,27
+Guinea,34
+GuineaBissau,31
+Liberia,31
+Mali,41
+Mauritania,39
+Niger,45
+Nigeria,37
+Senegal,32
+Sierra Leone,33
+Togo,31
+EASTERN AFRICA,33
+Burundi,34
+Comoros,29
+Djibouti,22
+Eritrea,28
+Ethiopia,32
+Kenya,28
+Madagascar,35
+Malawi,32
+Mauritius,10
+Mayotte,36
+Mozambique,39
+Reunion,16
+Rwanda,28
+Seychelles,13
+Somalia,43
+South Sudan,29
+Tanzania,34
+Uganda,36
+Zambia,34
+Zimbabwe,29
+MIDDLE AFRICA,40
+Angola,38
+Cameroon,35
+Central African Republic,44
+Chad,43
+Congo,30
+Congo DR,42
+Equatorial Guinea,30
+Gabon,30
+Sao Tome and Principe,28
+SOUTHERN AFRICA,20
+Botswana,25
+eSwatini,24
+Lesotho,26
+Namibia,27
+South Africa,20
+NORTHERN AMERICA,11
+Canada,9
+United States,11
+LATIN AMERICA AND THE CARIBBEAN,14
+CENTRAL AMERICA,16
+Belize,16
+Costa Rica,10
+El Salvador,16
+Guatemala,22
+Honduras,21
+Mexico,15
+Nicaragua,18
+Panama,15
+CARIBBEAN,15
+Antigua and Barbuda,12
+Bahamas,11
+Barbados,11
+Cuba,9
+Curacao,8
+Dominica,13
+Dominican Republic,18
+Grenada,16
+Guadeloupe,11
+Haiti,22
+Jamaica,12
+Martinique,10
+Puerto Rico,6
+St. Kitts and Nevis,12
+St. Lucia,11
+St. Vincent and the Grenadines,12
+Trinidad and Tobago,11
+SOUTH AMERICA,14
+Argentina,14
+Bolivia,21
+Brazil,12
+Chile,9
+Colombia,14
+Ecuador,17
+French Guiana,27
+Guyana,19
+Paraguay,20
+Peru,17
+Suriname,17
+Uruguay,10
+Venezuela,16
+ASIA,14
+WESTERN ASIA,19
+Armenia,12
+Azerbaijan,12
+Bahrain,11
+Cyprus,10
+Georgia,11
+Iraq,27
+Israel,19
+Jordan,22
+Kuwait,11
+Lebanon,15
+Oman,18
+Palestinian Territory,29
+Qatar,9
+Saudi Arabia,17
+Syria,21
+Turkey,12
+United Arab Emirates,10
+Yemen,30
+CENTRAL ASIA,24
+Kazakhstan,21
+Kyrgyzstan,22
+Tajikistan,27
+Turkmenistan,21
+Uzbekistan,26
+SOUTH ASIA,20
+Afghanistan,42
+Bangladesh,21
+Bhutan,14
+India,18
+Iran,13
+Maldives,13
+Nepal,21
+Pakistan,27
+Sri Lanka,15
+SOUTHEAST ASIA,15
+Brunei,15
+Cambodia,22
+Indonesia,17
+Laos,21
+Malaysia,15
+Myanmar,19
+Philippines,12
+Singapore,8
+Thailand,7
+Timor Leste,25
+Vietnam,15
+EAST ASIA,7
+China,7
+China Hong Kong SAR,4
+China Macao SAR,6
+Japan,6
+Korea: North,13
+Korea: South,5
+Mongolia,19
+Taiwan,6
+EUROPE,9
+NORTHERN EUROPE,10
+Denmark,10
+Estonia,9
+Finland,8
+Iceland,11
+Ireland,11
+Latvia,8
+Lithuania,8
+Norway,9
+Sweden,10
+United Kingdom,10
+WESTERN EUROPE,10
+Austria,9
+Belgium,10
+France,11
+Germany,9
+Liechtenstein,10
+Luxembourg,10
+Monaco,10
+Netherlands,9
+Switzerland,9
+EASTERN EUROPE,9
+Belarus,9
+Bulgaria,9
+Czechia,9
+Hungary,9
+Moldova,11
+Poland,8
+Romania,9
+Russia,9
+Slovakia,10
+Ukraine,8
+SOUTHERN EUROPE,7
+Albania,8
+Andorra,6
+Bosnia Herzegovina,7
+Croatia,9
+Greece,8
+Italy,7
+Kosovo,13
+Malta,9
+Montenegro,11
+North Macedonia,10
+Portugal,8
+San Marino,6
+Serbia,9
+Slovenia,8
+Spain,7
+OCEANIA,15
+Australia,11
+Federated States of Micronesia,21
+Fiji,23
+French Polynesia,13
+Guam,18
+Kiribati,27
+Marshall Islands,19
+Nauru,27
+New Caledonia,14
+New Zealand,11
+Palau,15
+Papua New Guinea,25
+Samoa,27
+Solomon Islands,29
+Tonga,23
+Tuvalu,23
+Vanuatu,29
+GEOGRAPHY,"BIRTHS PER 1,000 POPULATION"
+WORLD,17
+AFRICA,32
+NORTHERN AFRICA,23
+Algeria,24
+Egypt,21
+Libya,17
+Morocco,16
+Sudan,33
+Tunisia,14
+Western Sahara,16
+WESTERN AFRICA,36
+Benin,36
+Burkina Faso,31
+Cape Verde,14
+Cote d'Ivoire,33
+Gambia,34
+Ghana,27
+Guinea,34
+GuineaBissau,31
+Liberia,31
+Mali,41
+Mauritania,39
+Niger,45
+Nigeria,37
+Senegal,32
+Sierra Leone,33
+Togo,31
+EASTERN AFRICA,33
+Burundi,34
+Comoros,29
+Djibouti,22
+Eritrea,28
+Ethiopia,32
+Kenya,28
+Madagascar,35
+Malawi,32
+Mauritius,10
+Mayotte,36
+Mozambique,39
+Reunion,16
+Rwanda,28
+Seychelles,13
+Somalia,43
+South Sudan,29
+Tanzania,34
+Uganda,36
+Zambia,34
+Zimbabwe,29
+MIDDLE AFRICA,40
+Angola,38
+Cameroon,35
+Central African Republic,44
+Chad,43
+Congo,30
+Congo DR,42
+Equatorial Guinea,30
+Gabon,30
+Sao Tome and Principe,28
+SOUTHERN AFRICA,20
+Botswana,25
+eSwatini,24
+Lesotho,26
+Namibia,27
+South Africa,20
+NORTHERN AMERICA,11
+Canada,9
+United States,11
+LATIN AMERICA AND THE CARIBBEAN,14
+CENTRAL AMERICA,16
+Belize,16
+Costa Rica,10
+El Salvador,16
+Guatemala,22
+Honduras,21
+Mexico,15
+Nicaragua,18
+Panama,15
+CARIBBEAN,15
+Antigua and Barbuda,12
+Bahamas,11
+Barbados,11
+Cuba,9
+Curacao,8
+Dominica,13
+Dominican Republic,18
+Grenada,16
+Guadeloupe,11
+Haiti,22
+Jamaica,12
+Martinique,10
+Puerto Rico,6
+St. Kitts and Nevis,12
+St. Lucia,11
+St. Vincent and the Grenadines,12
+Trinidad and Tobago,11
+SOUTH AMERICA,14
+Argentina,14
+Bolivia,21
+Brazil,12
+Chile,9
+Colombia,14
+Ecuador,17
+French Guiana,27
+Guyana,19
+Paraguay,20
+Peru,17
+Suriname,17
+Uruguay,10
+Venezuela,16
+ASIA,14
+WESTERN ASIA,19
+Armenia,12
+Azerbaijan,12
+Bahrain,11
+Cyprus,10
+Georgia,11
+Iraq,27
+Israel,19
+Jordan,22
+Kuwait,11
+Lebanon,15
+Oman,18
+Palestinian Territory,29
+Qatar,9
+Saudi Arabia,17
+Syria,21
+Turkey,12
+United Arab Emirates,10
+Yemen,30
+CENTRAL ASIA,24
+Kazakhstan,21
+Kyrgyzstan,22
+Tajikistan,27
+Turkmenistan,21
+Uzbekistan,26
+SOUTH ASIA,20
+Afghanistan,42
+Bangladesh,21
+Bhutan,14
+India,18
+Iran,13
+Maldives,13
+Nepal,21
+Pakistan,27
+Sri Lanka,15
+SOUTHEAST ASIA,15
+Brunei,15
+Cambodia,22
+Indonesia,17
+Laos,21
+Malaysia,15
+Myanmar,19
+Philippines,12
+Singapore,8
+Thailand,7
+Timor Leste,25
+Vietnam,15
+EAST ASIA,7
+China,7
+China Hong Kong SAR,4
+China Macao SAR,6
+Japan,6
+Korea North,13
+Korea South,5
+Mongolia,19
+Taiwan,6
+EUROPE,9
+NORTHERN EUROPE,10
+Denmark,10
+Estonia,9
+Finland,8
+Iceland,11
+Ireland,11
+Latvia,8
+Lithuania,8
+Norway,9
+Sweden,10
+United Kingdom,10
+WESTERN EUROPE,10
+Austria,9
+Belgium,10
+France,11
+Germany,9
+Liechtenstein,10
+Luxembourg,10
+Monaco,10
+Netherlands,9
+Switzerland,9
+EASTERN EUROPE,9
+Belarus,9
+Bulgaria,9
+Czechia,9
+Hungary,9
+Moldova,11
+Poland,8
+Romania,9
+Russia,9
+Slovakia,10
+Ukraine,8
+SOUTHERN EUROPE,7
+Albania,8
+Andorra,6
+Bosnia Herzegovina,7
+Croatia,9
+Greece,8
+Italy,7
+Kosovo,13
+Malta,9
+Montenegro,11
+North Macedonia,10
+Portugal,8
+San Marino,6
+Serbia,9
+Slovenia,8
+Spain,7
+OCEANIA,15
+Australia,11
+Federated States of Micronesia,21
+Fiji,23
+French Polynesia,13
+Guam,18
+Kiribati,27
+Marshall Islands,19
+Nauru,27
+New Caledonia,14
+New Zealand,11
+Palau,15
+Papua New Guinea,25
+Samoa,27
+Solomon Islands,29
+Tonga,23
+Tuvalu,23
+Vanuatu,29
