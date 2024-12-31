@@ -65,21 +65,26 @@ world_pop_2023
 ```{python}
 # | include: false
 
-# Import world population data
+# Import world population data from a CSV file
 world_bth2023_data = pd.read_csv(
-    "data/world-births-data-2023.csv",
-    skiprows=4,
-    header=None,
-    names=["Geography", "Births"],
-    nrows=233,
+    "data/world-births-data-2023.csv",  # Path to the CSV file
+    skiprows=4,  # Skip the first 4 rows of the file
+    header=None,  # No header row in the file
+    names=["Geography", "Births"],  # Assign column names
+    nrows=233,  # Read only the first 233 rows
 )
 
+# Display the imported data
 world_bth2023_data
 
+# Filter the data to get the total number of births worldwide in 2023
 world_births_2023 = (
-    world_bth2023_data.query("Geography == 'WORLD'").drop(columns="Geography").squeeze()
+    world_bth2023_data.query("Geography == 'WORLD'")  # Filter rows where Geography is 'WORLD'
+    .drop(columns="Geography")  # Drop the 'Geography' column
+    .squeeze()  # Convert the DataFrame to a Series
 )
 
+# Display the total number of births worldwide in 2023
 world_births_2023
 ```
 
@@ -346,19 +351,19 @@ mean_schyrs_rawdata
 ## Row 1 {height=25%}
 
 ::: {.valuebox title="Completion, primary education, female (2023)" icon="backpack2" color="#bae4b3"}
-`{python} str(round(world_lit_2022,1)) + "%"`
-:::
-
-::: {.valuebox title="Completion, lower secondary, female (2023)" icon="backpack4" color="#74c476"}
 `{python} str(round(world_prim_2023,1)) + "%"`
 :::
 
-::: {.valuebox title="Completion, upper secondary, female (2023)" icon="award" color="#31a354"}
+::: {.valuebox title="Completion, lower secondary, female (2023)" icon="backpack4" color="#74c476"}
 `{python} str(round(world_lwsec_2023,1)) + "%"`
 :::
 
-::: {.valuebox title="Adult literacy, 15+ years, female (2022)" icon="easel" color="#006d2c"}
+::: {.valuebox title="Completion, upper secondary, female (2023)" icon="award" color="#31a354"}
 `{python} str(round(world_upsec_2023,1)) + "%"`
+:::
+
+::: {.valuebox title="Adult literacy, 15+ years, female (2022)" icon="easel" color="#006d2c"}
+`{python} str(round(world_lit_2022,1)) + "%"`
 :::
 
 ## Row 2
